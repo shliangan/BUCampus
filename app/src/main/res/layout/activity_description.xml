@@ -62,14 +62,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button_schedule"
-        android:layout_above="@+id/text_description"
-        android:layout_centerHorizontal="true"
-        android:text="Schedule" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -146,5 +138,13 @@
             android:textOn="Su"
             android:id="@+id/SunButton" />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/buttonReset"
+        android:layout_alignBottom="@+id/button_back"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

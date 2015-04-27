@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 
 public class Description  extends MapsActivity  {
         ArrayList<Integer> day = new ArrayList<>();
-    int iday;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -33,6 +34,22 @@ public class Description  extends MapsActivity  {
         descript.setText(MainActivity.description);
         build.setText(MainActivity.building);
         addr.setText(MainActivity.address);
+
+        Button buttonReset=(Button)findViewById(R.id.buttonReset);
+        buttonReset.setOnClickListener(new View.OnClickListener(){
+          @Override
+          public void onClick(View v){
+               boolean x=false;
+               x= deleteAll();
+                if(x==true){
+                    Toast.makeText(v.getContext(), "Week Reset Complete", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(v.getContext(), "Nothing to Reset", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         Button buttonBack = (Button) findViewById(R.id.button_back);
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +113,7 @@ public class Description  extends MapsActivity  {
                 if(day.size()>0){
                 for(int i = 0 ; i < day.size(); i++) {
                     try {
-                       ConvertAdd(MainActivity.address,day.get(i), MainActivity.description );
+                       ConvertAdd(MainActivity.address,day.get(i), MainActivity.building,MainActivity.description,MainActivity.address );
 
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -104,7 +121,7 @@ public class Description  extends MapsActivity  {
                 }}
                 else{
                     try {
-                        Marker marker = ConvertAdd(MainActivity.address, MainActivity.description );
+                         ConvertAdd(MainActivity.address, MainActivity.building,MainActivity.description,MainActivity.address );
 
                     } catch (IOException e) {
                         e.printStackTrace();

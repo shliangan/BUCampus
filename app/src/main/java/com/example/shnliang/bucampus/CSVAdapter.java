@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 
 /*
- * Very basic Custom Adapter that takes state name,capital pairs out of a csv
+ * Custom Adapter that takes state name, description and address out of a csv
  * file from the assets and uses those values to build a List of State objects.
  * Overrides the default getView() method to return a TextView with the state name.
  *
@@ -64,8 +64,8 @@ public class CSVAdapter extends ArrayAdapter<BUBuildings> {
 		 * created but scrolled off of the top (or bottom) of the screen, and thus are no
 		 * longer being shown on the screen. Since they are unused, we can "recycle" them
 		 * instead of creating a new View object for every row, which would be wasteful,
-		 * and lead to poor performance. The diference may not be noticeable in this
-		 * small example. But with larger more complex projects it will make a significant
+		 * and lead to poor performance.
+		 *  with larger more complex projects it will make a significant
 		 * improvement by recycling Views rather than creating new ones for each row.
 		 */
 
@@ -154,7 +154,7 @@ public class CSVAdapter extends ArrayAdapter<BUBuildings> {
                 tmpItems.addAll(buildingsArray);
                 for (int i = 0; i < tmpItems.size(); i++) {
                     BUBuildings bu = (BUBuildings) tmpItems.get(i);
-                    if (bu.getBuilding().toUpperCase().contains(constraint) || bu.getDescription().toUpperCase().contains(constraint)) {
+                    if (bu.getBuilding().toUpperCase().contains(constraint) || bu.getDescription().toUpperCase().contains(constraint)||bu.getAddress().toUpperCase().contains(constraint)) {
                         filt.add(bu);
                     }
                 }

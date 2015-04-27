@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 
 import java.io.BufferedReader;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -85,9 +86,7 @@ public class MapsActivity extends FragmentActivity {
 //                markers.add(markerOptions);
 //            }
 //        });
-        addMarker(mMap,new LatLng(10,10),"work");
 
-        int hold;
         //marker click
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
@@ -857,7 +856,7 @@ public class MapsActivity extends FragmentActivity {
 
     }
     //works takes in string gives back address... can be expanded to give back bunch of addresses
-    public Marker ConvertAdd(String locname, int day, String title) throws IOException {
+    public Marker ConvertAdd(String locname, int day, String title, String description, String addr) throws IOException {
 
         Time now = new Time();
         now.setToNow();
@@ -869,9 +868,11 @@ public class MapsActivity extends FragmentActivity {
         address = loc.getFromLocationName(locname, 1);
         lat= address.get(0).getLatitude();
         lon = address.get(0).getLongitude();
-        Marker newmark = mMap.addMarker(new MarkerOptions()
+        Marker newmark;
+        newmark = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(lat, lon))
                         .title(title)
+                        .snippet(description)
         );
         //saves it where user wants
         addMarkerToDay(new LatLng(lat, lon),locname,day);
@@ -889,7 +890,9 @@ public class MapsActivity extends FragmentActivity {
     }
 
 
-    public Marker ConvertAdd(String locname, String title) throws IOException {
+
+
+    public Marker ConvertAdd(String locname, String title, String description, String addr) throws IOException {
 
 
         Geocoder loc = new Geocoder(this, Locale.ENGLISH);
@@ -900,13 +903,14 @@ public class MapsActivity extends FragmentActivity {
         lon = address.get(0).getLongitude();
         Marker newmark = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(lat, lon))
-                        .title(title)
+                        .title(title).snippet(description)
         );
         markers.add(newmark);
 
         return newmark;
 
     }
+
     public Marker ConvertAdddel(String locname, String title) throws IOException {
 
 
@@ -1048,7 +1052,50 @@ public class MapsActivity extends FragmentActivity {
         }
         return schedule;
     }
+
+
+    public boolean deleteAll(){
+        boolean check=false;
+        check= deleteFile("Tuesday");
+        if(check== true)
+        {
+            return check;
+        }
+      check= deleteFile("Monday");
+        if(check== true)
+        {
+            return check;
+        }
+       check= deleteFile("Wednesday");
+        if(check== true)
+        {
+            return check;
+        }
+       check= deleteFile("Thursday");
+        if(check== true)
+        {
+            return check;
+        }
+       check=deleteFile("Friday");
+        if(check== true)
+        {
+            return check;
+        }
+       check= deleteFile("Saturday");
+        if(check== true)
+        {
+            return check;
+        }
+        check=deleteFile("Sunday");
+        if(check== true)
+        {
+            return check;
+        }
+    return check;
+    }
+
     public void DeleteFromDay(int day,Marker marker /*,String titledel*/){
+
         if(day == 1){
             try{
                 BufferedReader input = new BufferedReader(new InputStreamReader(openFileInput("Monday")));
