@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BU Campus</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_description">Description</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_edit_menu">EditMenu</string>
+
+    <string name="MButton">M</string>
+    <string name="TuButton">Tu</string>
+    <string name="WButton">W</string>
+    <string name="ThButton">Th</string>
+    <string name="FButton">F</string>
+    <string name="SatButton">Sa</string>
+    <string name="SunButton">Su</string>
+    <string name="title_activity_markers_pg">MarkersPg</string>
+    <string name="title_activity_marker">Marker</string>
+</resources>
