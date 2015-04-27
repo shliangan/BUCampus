@@ -60,8 +60,7 @@
         android:text="Add Marker"
         android:id="@+id/button_marker"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_toStartOf="@+id/button_schedule" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -71,21 +70,81 @@
         android:layout_centerHorizontal="true"
         android:text="Schedule" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remove Marker"
-        android:id="@+id/button_removemarker"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Address:"
         android:id="@+id/textView"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/text_building"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="68dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_above="@+id/button_marker"
+        android:layout_centerHorizontal="true">
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:id="@+id/MButton"
+            android:textOff="M"
+            android:textOn="M"
+            android:checked="false" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="Tu"
+            android:textOn="Tu"
+            android:id="@+id/TuButton"
+            android:checked="false" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="W"
+            android:textOn="W"
+            android:id="@+id/WButton" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="Th"
+            android:textOn="Th"
+            android:id="@+id/ThButton"
+            android:checked="false" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="F"
+            android:textOn="F"
+            android:id="@+id/FButton" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="Sa"
+            android:textOn="Sa"
+            android:id="@+id/SatButton" />
+
+        <ToggleButton
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:text="New ToggleButton"
+            android:textOff="Su"
+            android:textOn="Su"
+            android:id="@+id/SunButton" />
+    </LinearLayout>
 
 </RelativeLayout>

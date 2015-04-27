@@ -42,6 +42,14 @@
             android:name=".Description"
             android:label="@string/title_activity_description" >
         </activity>
+        <activity
+            android:name=".Marker"
+            android:label="@string/title_activity_marker" >
+        </activity>
+        <activity
+            android:name=".MarkersPg"
+            android:label="@string/title_activity_markers_pg" >
+        </activity>
     </application>
 
 </manifest>

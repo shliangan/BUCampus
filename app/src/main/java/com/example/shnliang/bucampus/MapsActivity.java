@@ -32,6 +32,8 @@ import static java.security.AccessController.getContext;
 
 
 public class MapsActivity extends FragmentActivity {
+
+
     ArrayList<Marker> markers = new ArrayList<Marker>();
     protected GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
@@ -40,8 +42,8 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
-
-        Button buttonPlay= (Button)findViewById(R.id.BUButton);
+       final Button buttonRemove=(Button)findViewById(R.id.buttonRemove);
+         Button buttonPlay= (Button)findViewById(R.id.BUButton);
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +61,7 @@ public class MapsActivity extends FragmentActivity {
         // Getting a reference to the map
         mMap = supportMapFragment.getMap();
 
-        // Clear all on long click
+        //Clear all on long click
         mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
             @Override
             public void onMapLongClick(LatLng latLng) {
@@ -69,47 +71,63 @@ public class MapsActivity extends FragmentActivity {
         });
 
 
-        //Add new on short click.
-        mMap.setOnMapClickListener(new OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng latLng) {
-                String y = String.valueOf(markers.size());
+//        //Add new on long click.
+//        mMap.setOnMapLongClickListener(new OnMapLongClickListener() {
+//
+//            @Override
+//            public void onMapLongClick(LatLng latLng) {
+//                String y = String.valueOf(markers.size());
+//
+//                // Creating a marker
+//                Marker markerOptions = mMap.addMarker(new MarkerOptions()
+//                        .position(latLng)
+//                        .title(y));
+//                markers.add(markerOptions);
+//            }
+//        });
+        addMarker(mMap,new LatLng(10,10),"work");
 
-                // Creating a marker
-                Marker markerOptions = mMap.addMarker(new MarkerOptions()
-                        .position(latLng)
-                        .title(y));
-                markers.add(markerOptions);
-            }
-        });
-
-
-        //delete individual from map and array
+        int hold;
+        //marker click
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+
+
             @Override
-            public boolean onMarkerClick(Marker marker) {
-                //loop works!
-                int s;
-                for (s = 0; s < markers.size(); s++) {
-                    Marker markerhold = markers.get(s);
-                    if (markerhold.equals(marker)) {
-                        break;
+            public boolean onMarkerClick( final Marker marker) {
+
+
+                buttonRemove.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        for (int s = 0; s < markers.size(); s++) {
+                            Marker markerhold = markers.get(s);
+                            if (markerhold.equals(marker)) {
+                                //delete
+                                markers.remove(s);
+                                marker.remove();
+                                break;
+                            }
+
+                        }
+
+
+                        //remove from map
+
+                        //move camera to orig position
+                        // mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(42.3496, -71.0997), 13.5f));
+                       // buttonRemove.setOnClickListener(null);
+
                     }
-                }
-                //delete
-                markers.remove(s);
 
-                //remove from map
-                marker.remove();
-                //move camera to orig position
+                });
 
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(42.3496, -71.0997), 13.5f));
+
 
                 return false;
-
             }
-
         });
+
+
 
 
     }
@@ -665,10 +683,11 @@ public class MapsActivity extends FragmentActivity {
     //takes map to put it on, position, name of marker
     public void addMarker(GoogleMap mMap, LatLng latlng, String title) {
         // here call database, drag out coordinates, create marker
-        mMap.addMarker(new MarkerOptions()
+        Marker ne = mMap.addMarker(new MarkerOptions()
                         .position(latlng)
                         .title(title)
         );
+        markers.add(ne);
 
     }
     //add marker to a specific day
@@ -838,7 +857,7 @@ public class MapsActivity extends FragmentActivity {
 
     }
     //works takes in string gives back address... can be expanded to give back bunch of addresses
-    public Marker ConvertAdd(String locname, int day) throws IOException {
+    public Marker ConvertAdd(String locname, int day, String title) throws IOException {
 
         Time now = new Time();
         now.setToNow();
@@ -852,13 +871,17 @@ public class MapsActivity extends FragmentActivity {
         lon = address.get(0).getLongitude();
         Marker newmark = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(lat, lon))
-                        .title(locname)
+                        .title(title)
         );
         //saves it where user wants
         addMarkerToDay(new LatLng(lat, lon),locname,day);
         //if not today, do not display!
+
         if(day != currentday){
             newmark.remove();
+        }
+        else{
+            markers.add(newmark);
         }
 
         return newmark;
@@ -880,6 +903,29 @@ public class MapsActivity extends FragmentActivity {
                         .title(title)
         );
         markers.add(newmark);
+
+        return newmark;
+
+    }
+    public Marker ConvertAdddel(String locname, String title) throws IOException {
+
+
+
+        Geocoder loc = new Geocoder(this, Locale.ENGLISH);
+        List<Address> address;
+        double lat, lon;
+        address = loc.getFromLocationName(locname, 1);
+        lat= address.get(0).getLatitude();
+        lon = address.get(0).getLongitude();
+        Marker newmark = mMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(lat, lon))
+                        .title(title)
+        );
+
+        //if not today, do not display!
+
+            newmark.remove();
+
 
         return newmark;
 
@@ -1016,7 +1062,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1056,7 +1102,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1096,7 +1142,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1136,7 +1182,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1176,7 +1222,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1216,7 +1262,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1256,7 +1302,7 @@ public class MapsActivity extends FragmentActivity {
                 while ((tit = input.readLine()) != null){
                     lat = input.readLine();
                     lon = input.readLine();
-                    if(lat !=sDLat && lon != sDLon) {
+                    if(!lat.equals(sDLat) && !lon.equals(sDLon)) {
                         intitle.add(tit);
                         inlat.add(lat);
                         inlon.add(lon);
@@ -1283,6 +1329,14 @@ public class MapsActivity extends FragmentActivity {
             }
 
         }
+        Time now = new Time();
+        now.setToNow();
+        int currentday = now.weekDay;
+        if(day == currentday){
+            marker.remove();
+
+        }
+
     }
 
 
