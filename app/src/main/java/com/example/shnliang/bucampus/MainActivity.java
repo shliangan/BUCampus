@@ -81,6 +81,7 @@ public class MainActivity extends Activity {
         });
 
         EditText searchText = (EditText) findViewById(R.id.inputSearch);
+        searchText.callOnClick();
         searchText.addTextChangedListener(new TextWatcher(){
 
             @Override

@@ -45,6 +45,7 @@ public class MapsActivity extends FragmentActivity {
         setUpMapIfNeeded();
        final Button buttonRemove=(Button)findViewById(R.id.buttonRemove);
          Button buttonPlay= (Button)findViewById(R.id.BUButton);
+
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="#7FFFD4">
 
     <LinearLayout
         android:id="@+id/buttonBar"
@@ -21,7 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick_DisplayRecords"
-            android:text="Maps" />
+            android:text="Maps"
+            android:textColor="#F2B50F"
+            android:background="#00933B" />
     </LinearLayout>
 
     <EditText

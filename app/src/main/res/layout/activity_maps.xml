@@ -20,14 +20,17 @@
         android:id="@+id/BUButton"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:text="BU Buildings" />
+        android:text="BU Buildings"
+        android:elegantTextHeight="false"
+        android:background="#ffffddd5" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Remove"
         android:id="@+id/buttonRemove"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:background="#ffdbe0ff"
+        android:layout_alignBottom="@+id/map"
+        android:layout_alignEnd="@+id/BUButton" />
 
 </RelativeLayout>
