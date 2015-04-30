@@ -1,4 +1,4 @@
-package com.example.shnliang.bucampus;
+package com.shliangan.shnliang.bucampus;
 
 /**
  * Created by shnliang on 4/23/15.
@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
-import android.app.Activity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.content.Context;
@@ -18,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 

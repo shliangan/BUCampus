@@ -1,0 +1,64 @@
+
+
+
+
+Instructions:
+
+BU Campus consists of THREE MAIN PAGES: The MAP page, the BU BUILDINGS page, and the DESCRIPTION page.
+
+The MAP Page (initial/main page):
+	- Push the BU BUILDINGS button to navigate to the MENU page.
+	
+	- Touch and hold the map to remove all existing markers.
+	
+	- Click on a marker and then click the REMOVE button to remove any existing 		markers.
+	
+	- Use the center button on the top right of the page to center your map view.
+
+BU BUILDINGS Page:
+	- Browse through the menu for your desired BU building.
+	
+	- Use key words/inputs to find a building.
+
+SEARCH BAR:
+KeyWords/Inputs:
+	-Acronyms: most BU buildings all have a designated acronym (example: PHO, CAS, 		GCB)
+	
+	-Building name: you may type in the actual building name (example: Photonics 		Building, College of Arts & Science, General Classroom Building)
+	
+	-Type of building: you may be more specific of the type of building you are 		looking for (example: Library, Dorm, Restaurant, Dining Hall)
+	
+	-Dining/ Convenience points acceptance: you may type in Dining points or		Convenience Points to find the exact locations on campus that accepts Dining/ 		Convenience points.
+	
+	-Address: you can choose to input the address of the building (example: 1019 		Commonwealth Avenue 02215)
+	
+	-Click on your desired building to move on to the PLANNER page.
+	
+	-Click the MAPS button to return to the main page.
+
+DESCRIPTION Page:
+	- BACK button will links you back to the menu. 
+	
+	- MAPS button will link you back to the Map.
+	
+	- There are 7 TOGGLE BUTTONS for each day of the week.
+	
+	- You can toggle on a specific day of the week at which you desire to intend your 	action to act on. 
+	
+	- Clicking on the button again will toggle off the day.
+	
+	- After toggling the specific day you wish to act on press the ADD MARKER button 	to add your marker on the selected days. Or press the RESET button to remove all 	markers from the selected days.
+	
+	- You may also choose to set a marker without choosing a day, by clicking directly 	on the ADD MARKERS button without toggling a day. This will set a non-day specific 	marker, which will stay marked on the map until removed manually.
+
+MAPS page:
+	- Click on a specific marker to view its details. 
+	
+	- REMOVE button is used to Remove the marker.
+	
+	- Use the Google Maps button on the bottom right corner of the screen to get 		direction to your desired location.
+	
+	- Press and hold on the map to remove all markers.
+
+
+

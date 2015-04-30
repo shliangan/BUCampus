@@ -1,8 +1,7 @@
-package com.example.shnliang.bucampus;
+package com.shliangan.shnliang.bucampus;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 
 import android.text.Editable;
@@ -14,9 +13,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.logging.Filter;
 
 /*
  * Very basic Activity, the only things it does
@@ -41,6 +37,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Button buttonMaps=(Button) findViewById(R.id.buttonMaps);
+        Button instructions=(Button) findViewById(R.id.buttonInstructions);
         EditText edit=(EditText) findViewById(R.id.textDisplay);
         edit.setEnabled(false);
         buttonMaps.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +47,13 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-
+        instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, instructions.class);
+                startActivity(intent);
+            }
+        });
 
         //Lookup our ListView
         ListView mList = (ListView)findViewById(R.id.listBuildings);

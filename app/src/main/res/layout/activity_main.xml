@@ -59,9 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Instructions"
-        android:id="@+id/button"
+        android:id="@+id/buttonInstructions"
         android:layout_alignTop="@+id/buttonBar"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="#ff8dd7ff" />
 
     <!--<EditText-->
     <!--android:layout_width="wrap_content"-->

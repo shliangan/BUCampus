@@ -33,4 +33,13 @@
         android:layout_alignBottom="@+id/map"
         android:layout_alignEnd="@+id/BUButton" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructions"
+        android:id="@+id/instructions"
+        android:background="#ff92ffbc"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

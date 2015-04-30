@@ -1,4 +1,4 @@
-package com.example.shnliang.bucampus;
+package com.shliangan.shnliang.bucampus;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,15 +15,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 
 import java.io.BufferedReader;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.security.AccessControlContext;
+
 import android.text.format.Time;
 import android.widget.Toast;
 
@@ -31,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import static com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
-import static java.security.AccessController.getContext;
 
 
 public class MapsActivity extends FragmentActivity {
@@ -47,6 +44,16 @@ public class MapsActivity extends FragmentActivity {
         setUpMapIfNeeded();
        final Button buttonRemove=(Button)findViewById(R.id.buttonRemove);
          Button buttonPlay= (Button)findViewById(R.id.BUButton);
+
+        Button instructions=(Button)findViewById(R.id.instructions);
+
+        instructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MapsActivity.this, instructions.class);
+                startActivity(intent);
+            }
+        });
 
         buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override

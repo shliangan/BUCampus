@@ -1,4 +1,4 @@
-package com.example.shnliang.bucampus;
+package com.shliangan.shnliang.bucampus;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.example.shnliang.bucampus;
+package com.shliangan.shnliang.bucampus;
 
 /**
  * Created by shnliang on 4/23/15.
