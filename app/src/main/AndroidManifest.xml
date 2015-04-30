@@ -42,6 +42,10 @@
             android:name=".Description"
             android:label="@string/title_activity_description" >
         </activity>
+        <activity
+            android:name=".instructions"
+            android:label="@string/title_activity_instructions" >
+        </activity>
     </application>
 
 </manifest>

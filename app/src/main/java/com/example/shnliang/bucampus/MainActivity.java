@@ -41,6 +41,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         Button buttonMaps=(Button) findViewById(R.id.buttonMaps);
+        EditText edit=(EditText) findViewById(R.id.textDisplay);
+        edit.setEnabled(false);
         buttonMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

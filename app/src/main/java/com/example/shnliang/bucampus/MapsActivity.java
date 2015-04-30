@@ -25,6 +25,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.AccessControlContext;
 import android.text.format.Time;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -105,8 +107,10 @@ public class MapsActivity extends FragmentActivity {
                                 //delete
                                 markers.remove(s);
                                 marker.remove();
+                                Toast.makeText(v.getContext(), "Mission accomplished", Toast.LENGTH_SHORT).show();
                                 break;
                             }
+
 
                         }
 
@@ -126,6 +130,7 @@ public class MapsActivity extends FragmentActivity {
                 return false;
             }
         });
+
 
 
 
@@ -925,6 +930,7 @@ public class MapsActivity extends FragmentActivity {
         Marker newmark = mMap.addMarker(new MarkerOptions()
                         .position(new LatLng(lat, lon))
                         .title(title)
+                        .snippet(title)
         );
 
         //if not today, do not display!
@@ -1057,6 +1063,8 @@ public class MapsActivity extends FragmentActivity {
 
     public boolean deleteAll(){
         boolean check=false;
+        mMap.clear();
+        markers.clear();
         check= deleteFile("Tuesday");
         if(check== true)
         {
@@ -1092,6 +1100,7 @@ public class MapsActivity extends FragmentActivity {
         {
             return check;
         }
+
     return check;
     }
 

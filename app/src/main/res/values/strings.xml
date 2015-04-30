@@ -18,4 +18,5 @@
     <string name="SunButton">Su</string>
     <string name="title_activity_markers_pg">MarkersPg</string>
     <string name="title_activity_marker">Marker</string>
+    <string name="title_activity_instructions">instructions</string>
 </resources>

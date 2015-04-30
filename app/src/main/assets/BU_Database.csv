@@ -38,7 +38,7 @@ KCB,Kenmore Classroom Building,565 Commonweatlh Avenue
 KHC,Kilachand Honors College,147 Bay State Road
 LAW,Law School,765 Commonwealth Avenue
 LNG,Modern Foreign Languages,718 Commonwealth Avenue
-LSE,Life Science & Engineering Building,24 Cummington Mall
+LSEB,Life Science & Engineering Building,24 Cummington Mall
 MAR,Marsh Chapel,735 Commonwealth Avenue
 MCS,Math & Computer Science,111 Cummington Mall
 MED,School of Medicine,715 Albany Street
@@ -62,7 +62,7 @@ SEA,School of Education Annex,621 Commonwealth Avenue
 SED,School of Education,2 Silber Way
 SHA,School of Hospitality Administration,928 Commonwealth Avenue
 SLB,Science Library Building,30-38 Cummington Mall
-SMG,School of Management,595 Commonwealth Avenue
+SMG(Questrom QSB),School of Management,595 Commonwealth Avenue
 SOC,Sociology,96-100 Cummington Mall
 SPH,School of Public Health,715 Albany Street
 SSW,School of Social Work,264-270 Bay State Road
@@ -80,7 +80,7 @@ S Building,Medical Campus Buildings,801 Albany Street
 T Building,Medical Campus Buildings,715 Albany Street (Talbot)
 X Building,Medical Campus Buildings,650 Albany Street (EBRC)
 The Fresh Food Co. at West Campus,Dining Halls,275 Babcock Street Boston MA 02215
-Warren Towers Dining Hall,Dining Halls,700 Commonwealth Ave
+Warren Towers Dining Hall,Dining Halls,700 Commonwealth Ave Boston MA 02215
 The Fresh Food Co. at Marciano Commons,Dining Halls,100 Bay State Road, Boston MA 02215
 Hillel Dining Room,Dining Halls,213 Bay State Road, Boston MA 02215
 Faculty Dining,Retail Dining: Convenience Points Accepted,213 Bay State Road Boston MA 02215
@@ -110,7 +110,7 @@ Charles River Bread Co.,Union Court: Dining points and Convenience Points Accept
 Taking it to the Street,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215
 Copper Kettle,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215
 Cranberry Farms,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215
-Easy Goes Take Out/Drinks,Union Court: Dining points and Convenience PointsAccepted,Ó775 Commonwealth Ave Boston MA 02215
+Easy Goes Take Out/Drinks,Union Court: Dining points and Convenience PointsAccepted,775 Commonwealth Ave Boston MA 02215
 Loose Leafs,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215
 Panda Express,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215
 Rhetts,Union Court: Dining points and Convenience Points Accepted,775 Commonwealth Ave Boston MA 02215

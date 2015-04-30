@@ -128,6 +128,7 @@ public class Description  extends MapsActivity  {
                     }
 
                 }
+                Toast.makeText(v.getContext(), "Marker added", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Description.this, MapsActivity.class);
                 startActivity(intent);
