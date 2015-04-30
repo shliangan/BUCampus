@@ -52,7 +52,7 @@ public class instructions extends ActionBarActivity {
         maps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(instructions.this, MainActivity.class);
+                Intent intent = new Intent(instructions.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
